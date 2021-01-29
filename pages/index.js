@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import Head from 'next/head'
 import db from '../db.json'
 import Widget from '../src/components/Widget'
 import QuizContainer from '../src/components/QuizContainer'
@@ -14,6 +14,12 @@ import QuizLogo from '../src/components/QuizLogo'
 
 export default function Home() {
   return (
+  <>
+    <Head>
+      <title>Pagina principal</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta property="og:image" content= {db.bg}></meta>
+    </Head>
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
 
@@ -40,5 +46,6 @@ export default function Home() {
       </QuizContainer>
       <GitHubCorner projectUrl= "https://github.com/joaoVictDev"/>
     </QuizBackground>
+  </>
   )
 }
